@@ -4,7 +4,8 @@
   "description": "Node.Js Design Patterns Third Edition, published by Packt",
   "main": "index.js",
   "scripts": {
-    "test": "eslint ."
+    "test": "eslint .",
+    "start": "node index.js"
   },
   "repository": {
     "type": "git",
@@ -51,5 +52,7 @@
       "git add"
     ]
   },
-  "dependencies": {}
+  "dependencies": {
+    "express": "^5.1.0"
+  }
 }
