@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "test": "eslint .",
-    "start": "node index.js"
+    "start": "node 02-the-module-system/01-revealing-module-pattern/index.js"
   },
   "repository": {
     "type": "git",
