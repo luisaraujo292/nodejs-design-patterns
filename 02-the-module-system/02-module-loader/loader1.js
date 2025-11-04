@@ -27,6 +27,19 @@ function loadModule (filename, module, require) {
   eval(wrappedSrc)
 }
 
+
+
+
+
+// This function loads the content of a module, wraps it into a private scope,and evaluates it. 
+function loadModule (filename, module, require) {
+  const wrappedSrc =
+    `(function (module, exports, require) {
+      ${fs.readFileSync(filename, 'utf8')}
+    })(module, module.exports, require)`
+  eval(wrappedSrc)
+}
+
 require = function require (moduleName) {
   console.log(`Require invoked for module: ${moduleName}`)
   const id = require.resolve(moduleName) // ①
