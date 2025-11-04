@@ -1,11 +1,14 @@
-const express = require('express')
-const app = express()
-const port = process.env.PORT || 3000 // Heroku assigns a dynamic port
+const http = require('http')
 
-app.get('/', (req, res) => {
-  res.send('Hello World!')
+const hostname = '0.0.0.0' // Listen on all available network interfaces
+const port = process.env.PORT || 3000 // Use Heroku's assigned port or default to 3000
+
+const server = http.createServer((req, res) => {
+  res.statusCode = 200
+  res.setHeader('Content-Type', 'text/plain')
+  res.end('Hello World from Heroku!\n')
 })
 
-app.listen(port, () => {
-  console.log(`App listening at http://localhost:${port}`)
+server.listen(port, hostname, () => {
+  console.log(`Server running at http://${hostname}:${port}/`)
 })
